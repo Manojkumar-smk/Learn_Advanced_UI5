@@ -8,6 +8,9 @@ sap.ui.define([
         },
         onNavBack() {
             this.getOwnerComponent().getRouter().navTo("RouteView1");
+        },
+        nextPage() {
+            this.getOwnerComponent().getRouter().navTo("RouteView3")
         }
     });
 });

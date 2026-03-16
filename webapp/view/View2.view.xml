@@ -89,5 +89,12 @@
             </l:Splitter>
         </content>
         </Panel>
+        <footer>
+        <Bar>
+        <contentRight>
+        <Button text="Next Page" press="nextPage" type="Emphasized"></Button>
+        </contentRight>   
+        </Bar>
+        </footer>
     </Page>
 </mvc:View>
