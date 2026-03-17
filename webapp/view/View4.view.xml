@@ -1,0 +1,101 @@
+<mvc:View
+    xmlns:smartfield="sap.ui.comp.smartfield"
+    controllerName="com.demo.learnui5.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+>
+    <Page
+        title="i am View 4"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <Panel
+            headerText="Multiple Value UI Elements"
+            expand="true"
+            expandable="true"
+        >
+            <content>
+                <f:SimpleForm
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="2"
+                    labelSpanM="2"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                >
+                    <f:content>
+                        <Label text="I am SelectBox" />
+                        <Select
+                            id="oSelName"
+                            items="{oModel>/EmployeeSet}"
+                            change="onSelChange"
+                        >
+                            <items>
+                                <core:Item
+                                    text="{oModel>Name}"
+                                    key="{oModel>Name}"
+                                />
+                            </items>
+                        </Select>
+                    </f:content>
+                    <f:content>
+                        <Label text="I am ComboBox" />
+                        <ComboBox
+                            id="oCBName"
+                            items="{oModel>/EmployeeSet}"
+                            selectionChange="onCBChange"
+                        >
+                            <items>
+                                <core:Item
+                                    text="{oModel>Name}"
+                                    key="{oModel>Name}"
+                                />
+                            </items>
+                        </ComboBox>
+                    </f:content>
+                    <f:content>
+                        <Label text="I am MultiComboBox" />
+                        <MultiComboBox
+                            id="oMCBName"
+                            items="{oModel>/EmployeeSet}"
+                            showSelectAll="true"
+                            selectionFinish="onMCBChange"
+                        >
+                            <items>
+                                <core:Item
+                                    text="{oModel>Name}"
+                                    key="{oModel>Name}"
+                                />
+                            </items>
+                        </MultiComboBox>
+                    </f:content>
+                    <f:content>
+                        <Label text="I am RadioButtonGroup" />
+                        <RadioButtonGroup
+                            id="oRBGName"
+                            buttons="{oModel>/EmployeeSet}"
+                            columns="2"
+                            selectedIndex="-1"
+                            select="onRBGChange"
+                        >
+                            <buttons>
+                                <RadioButton text="{oModel>Name}" />
+                            </buttons>
+                        </RadioButtonGroup>
+                    </f:content>
+                    <f:content>
+                        <Label text="lookUpModel"></Label>
+                        <Select items="{lookUpModel>/amodeOfContact}">
+                            <items>
+                                <core:Item text="{lookUpModel>text}" />
+                            </items>
+                        </Select>
+                    </f:content>
+                </f:SimpleForm>
+            </content>
+        </Panel>
+    </Page>
+</mvc:View>

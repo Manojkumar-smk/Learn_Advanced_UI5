@@ -67,6 +67,13 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
+      },
+      "empModel": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "lookUpModel":{
+        "type" : "sap.ui.model.json.JSONModel",
+        "uri" : "model/lookupvalues.json"
       }
     },
     "resources": {
@@ -109,6 +116,13 @@
           "target": [
             "TargetView3"
           ]
+        },
+        {
+          "name": "RouteView4",
+          "pattern": "Fourthview",
+          "target": [
+            "TargetView4"
+          ]
         }
       ],
       "targets": {
@@ -123,6 +137,10 @@
         "TargetView3": {
           "id": "View3",
           "name": "View3"
+        },
+        "TargetView4": {
+          "id": "View4",
+          "name": "View4"
         }
       }
     },

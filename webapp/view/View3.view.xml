@@ -11,28 +11,111 @@
         showNavButton="true"
         navButtonPress="onNavBack"
     >
-        <content>
-            <Table items="{oModel>/EmployeeSet}">
-                <headerToolbar>
-                    <Toolbar>
-                        <Title text="Employee Details" />
-                    </Toolbar>
-                </headerToolbar>
-                <columns>
-                    <Column>
-                        <Text text="Employee ID" />
-                    </Column>
-                    <Column>
-                        <Text text="Employee Name" />
-                    </Column>
-                </columns>
-                <items>
-                    <ColumnListItem>
-                        <Text text="{oModel>Empid}" />
-                        <Text text="{oModel>Name}" />
-                    </ColumnListItem>
-                </items>
-            </Table>
-        </content>
+        <Panel
+            headerText="oModel"
+            expand="true"
+            expandable="true"
+        >
+            <content>
+                <Table items="{oModel>/EmployeeSet}">
+                    <headerToolbar>
+                        <Toolbar>
+                            <!-- <Title text="Employee Details" /> -->
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Employee ID" />
+                        </Column>
+                        <Column>
+                            <Text text="Employee Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Rating" />
+                        </Column>
+                        <Column>
+                            <Text text="Status" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <Text text="{oModel>Empid}" />
+                            <Text text="{oModel>Name}" />
+                            <Text
+                                text="{path:'oModel>Rating',formatter:'.f.formatRating'}"
+                            />
+                            <ObjectStatus
+                                text="{oModel>Status}"
+                                state="{path:'oModel>Status',formatter:'.f.formatStatus'}"
+                            />
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        </Panel>
+        <Panel
+            headerText="empModel"
+            expand="true"
+            expandable="true"
+        >
+            <content>
+                <Table items="{empModel>/results}">
+                    <headerToolbar>
+                        <Toolbar>
+                            <!-- <Title text="Employee Details" /> -->
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Employee ID" />
+                        </Column>
+                        <Column>
+                            <Text text="Employee Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Rating" />
+                        </Column>
+                        <Column>
+                            <Text text="Status" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <Text text="{empModel>Empid}" />
+                            <Text text="{empModel>Name}" />
+                            <Text text="{empModel>Rating}" />
+                            <ObjectStatus text="{empModel>Status}" />
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </content>
+        </Panel>
+        <Panel headerText="List" expand="true"
+            expandable="true">
+        <List items="{oModel>/EmployeeSet}" >
+            <headerToolbar />
+            <items>
+                <ObjectListItem title="{oModel>Name}" number="{oModel>Salary}">
+                    <attributes>
+                        <ObjectAttribute
+                            title="Employee ID"
+                            text="{oModel>Empid}"    
+                        />   
+                    </attributes>
+                    <firstStatus>
+                    <ObjectStatus text="{oModel>Status}" 
+                    state="{path:'oModel>Status',formatter:'.f.formatStatus'}"></ObjectStatus>
+                    </firstStatus>
+                </ObjectListItem>
+            </items>
+        </List>
+        </Panel>
+        <footer>
+        <Bar>
+        <contentRight>
+        <Button text="Next Page" press="nextPage" type="Emphasized"></Button>
+        </contentRight>   
+        </Bar>
+        </footer>
     </Page>
 </mvc:View>

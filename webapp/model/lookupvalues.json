@@ -1,0 +1,21 @@
+{
+    "amodeOfContact" : [
+        {
+            "text" : "Email"
+        },
+        {
+            "text" : "Phone"
+        },
+        {
+            "text" : "Telephone"
+        }
+    ],
+    "agender" : [
+        {
+            "text" : "Male"
+        },
+        {
+            "text" : "Female"
+        }
+    ]
+}
