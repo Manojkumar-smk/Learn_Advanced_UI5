@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="com.demo.learnui5.controller.View6"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+>
+    <Page
+        title="i am View 6"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <Panel>
+            <content>
+                <f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6">
+                    <f:content>
+                        <Label text="Select an Employee Id" />
+                        <Input
+                            id="oIpEmp"
+                            showValueHelp="true"
+                            valueHelpRequest="onPressF4Help"
+                        />
+                    </f:content>
+                </f:SimpleForm>
+            </content>
+        </Panel>
+    </Page>
+</mvc:View>

@@ -30,8 +30,15 @@ sap.ui.define([
         },
         onGetMultiEmp(){
             var oTable = this.byId("oMultiTabEmp");
-            var oSelectedItems = oTable.getSelectedItems();
-            console.log(oSelectedItems)
+            var aSelectedItems = oTable.getSelectedItems();
+            console.log(aSelectedItems)
+            for(var i=0; i< aSelectedItems.length; i++){
+                var Email = aSelectedItems[i].getBindingContext("oModel").getObject().Email;
+                MessageBox.alert(Email);
+            }
+        },
+        nextPage() {
+            this.getOwnerComponent().getRouter().navTo("RouteView6")
         }
 
     })
