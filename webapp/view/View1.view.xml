@@ -1,22 +1,61 @@
-<mvc:View controllerName="com.demo.learnui5.controller.View1"
+<mvc:View
+    controllerName="com.demo.learnui5.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="i am View 1">
-    <content>
-    <Text id="oTxtWelcome" text="Welcome to SAP UI5" width="100%" textAlign="Center" class="sapMH1FontSize"></Text>
-    <Label  text="Enter Your Name" class="sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginTop" ></Label>
-    <Input id="oIpName" width="30%"></Input>
-    <Button text="Submit" class="sapUiTinyMarginBegin sapUiTinyMarginEnd" type="Accept" press="onPressSubmit"></Button>
-    <Label  text="Enter Color" class="sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginTop" ></Label>
-    <Input id="oIpColor" width="30%" class="sapUiTinyMarginBegin sapUiTinyMarginEnd" submit="onEnter"></Input>
-    <Button id="oBtnColor" text="color" class="sapUiTinyMarginBegin sapUiTinyMarginEnd" type="Accept"></Button>
-    </content>
-    <footer>
-    <Bar>
-    <contentRight>
-    <Button text="Go to Next Page" type="Emphasized" press="onNavTo"></Button>
-    </contentRight>
-    </Bar>
-    </footer>
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="i am View 1"
+    >
+        <content>
+            <Text
+                id="oTxtWelcome"
+                text="Welcome to SAP UI5"
+                width="100%"
+                textAlign="Center"
+                class="sapMH1FontSize"
+            />
+            <Label
+                text="Enter Your Name"
+                class="sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginTop"
+            />
+            <Input
+                id="oIpName"
+                width="30%"
+            />
+            <Button
+                text="Submit"
+                class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+                type="Accept"
+                press="onPressSubmit"
+            />
+            <Label
+                text="Enter Color"
+                class="sapUiTinyMarginBegin sapUiTinyMarginEnd sapUiTinyMarginTop"
+            />
+            <Input
+                id="oIpColor"
+                width="30%"
+                class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+                submit="onEnter"
+            />
+            <Button
+                id="oBtnColor"
+                text="color"
+                class="sapUiTinyMarginBegin sapUiTinyMarginEnd"
+                type="Accept"
+            />
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        text="Go to Next Page"
+                        type="Emphasized"
+                        press="onNavTo"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
     </Page>
 </mvc:View>

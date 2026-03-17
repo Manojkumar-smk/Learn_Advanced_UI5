@@ -28,6 +28,9 @@ sap.ui.define([
             var oSelectedBtn = this.byId("oRBGName").getSelectedButton();
             var sText = oSelectedBtn.getText();
             MessageBox.alert("You selected: " + sText);
+        },
+        nextPage() {
+            this.getOwnerComponent().getRouter().navTo("RouteView5")
         }
     })
 }
