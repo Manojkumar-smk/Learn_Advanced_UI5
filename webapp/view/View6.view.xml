@@ -11,19 +11,147 @@
         showNavButton="true"
         navButtonPress="onNavBack"
     >
-        <Panel>
+        <Panel
+            expandable="true"
+            expanded="true"
+            class="sapUiSmallMarginBeginEnd"
+            width="auto"
+        >
             <content>
-                <f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="2" labelSpanM="2" emptySpanL="6" emptySpanM="6">
+                <f:SimpleForm
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    emptySpanL="0"
+                    emptySpanM="0"
+                    editable="true"
+                    columnsL="3"
+                    columnsM="3"
+                >
                     <f:content>
-                        <Label text="Select an Employee Id" />
+                        <core:Title text="Filters" />
+                        <Label text="Employee Id" />
                         <Input
                             id="oIpEmp"
                             showValueHelp="true"
                             valueHelpRequest="onPressF4Help"
                         />
+                        <Label text="Employee Name" />
+                        <Input id="oIpNameFilter" />
+                        <core:Title text="Sorter" />
+                        <Label text="Sort Fields" />
+                        <ComboBox id="oCBSortField">
+                            <items>
+                                <core:Item
+                                    text="Employee Id"
+                                    key="Empid"
+                                />
+                                <core:Item
+                                    text="Name"
+                                    key="Name"
+                                />
+                            </items>
+                        </ComboBox>
+                        <Label text="Sort Order" />
+                        <RadioButtonGroup
+                            id="oRBGSortOrder"
+                            selectedIndex="-1"
+                            columns="2"
+                        >
+                            <buttons>
+                                <RadioButton text='Ascending' />
+                                <RadioButton text='Descending' />
+                            </buttons>
+                        </RadioButtonGroup>
+                        <core:Title text="Grouping" />
+                        <Label text="Group field" />
+                        <ComboBox id="oCBGroupField">
+                            <items>
+                                <core:Item
+                                    text="Skill"
+                                    key="Skill"
+                                />
+                                <core:Item
+                                    text="Designation"
+                                    key="Desig"
+                                />
+                            </items>
+                        </ComboBox>
+                        <Label text="Group Order" />
+                        <RadioButtonGroup
+                            id="oRBGGroupOrder"
+                            selectedIndex="-1"
+                            columns="2"
+                        >
+                            <buttons>
+                                <RadioButton text="Ascending" />
+                                <RadioButton text="Descending" />
+                            </buttons>
+                        </RadioButtonGroup>
                     </f:content>
                 </f:SimpleForm>
             </content>
+            <FlexBox
+                justifyContent="End"
+                class="sapUiTinyMarginEnd"
+            >
+                <Button
+                    id="oBtnGo"
+                    text="Go"
+                    type="Accept"
+                    press="onPressGo"
+                    class="sapUiTinyMarginEnd"
+                />
+                <Button
+                    id="oBtnReset"
+                    text="Reset"
+                    type="Reject"
+                    press="onPressReset"
+                />
+            </FlexBox>
         </Panel>
+        <Table
+            id="oTabEmp"
+            items="{oModel>/EmployeeSet}"
+            class=".myCustomTable"
+            backgroundDesign="Translucent"   
+        >
+            <columns>
+                <Column>
+                    <Text text="Employee Id" />
+                </Column>
+                <Column>
+                    <Text text="Name" />
+                </Column>
+                <Column>
+                    <Text text="Designation" />
+                </Column>
+
+                <Column>
+                    <Text text="Status" />
+                </Column>
+                <Column>
+                    <Text text="Rating" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem
+                    type="Navigation"
+                    press="onPressRow"
+                >
+                    <Text text="{oModel>Empid}" />
+                    <Text text="{oModel>Name}" />
+                    <Text text="{oModel>Desig}" />
+                    <ObjectStatus
+                        text="{oModel>Status}"
+                        state="{path:'oModel>Status',formatter:'.f.formatStatus'}"
+                        inverted="true"
+                    />
+                    <Text
+                        text="{path:'oModel>Rating',formatter:'.f.formatRating'}"
+                    />
+                </ColumnListItem>
+            </items>
+        </Table>
     </Page>
 </mvc:View>

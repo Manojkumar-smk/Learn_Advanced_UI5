@@ -34,7 +34,7 @@
         </Panel>
         <Panel headerText="SingleSelectMaster" expand="true" expandable="true">
             <content>
-                <Table id="oTabEmp" items="{oModel>/EmployeeSet}"  mode="SingleSelectMaster">
+                <Table id="oTabEmp1" items="{oModel>/EmployeeSet}"  mode="SingleSelectMaster">
                     <headerToolbar>
                     <Toolbar >
                     <ToolbarSpacer ></ToolbarSpacer>

@@ -16,7 +16,7 @@ sap.ui.define([
             MessageBox.alert(email);
         },
         onGetEmployee() {
-            var oTable = this.byId("oTabEmp");
+            var oTable = this.byId("oTabEmp1");
             var oSelectedItem = oTable.getSelectedItem();
 
             if (oSelectedItem) {
