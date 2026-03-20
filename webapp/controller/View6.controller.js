@@ -43,8 +43,40 @@ sap.ui.define([
                 aFilters.push(new Filter("Name", "Contains", name));
             }
             var aSorters = [];
+             var groupField = this.byId("oCBGroupField").getSelectedKey();
+            var groupOrder = this.byId("oRBGGroupOrder").getSelectedIndex();
+
+            if (groupField !== "" && groupOrder !== -1) {
+                aSorters.push(new Sorter(groupField, (groupOrder === 0) ? false : true, function (oBindingConntext) {
+                    if (groupField === "Status") {
+                        var Status = oBindingConntext.getObject().Status;
+                        return {
+                            key: Status,
+                            text: Status
+                        }
+                    }
+                    else if (groupField === "Desig") {
+                        var desig = oBindingConntext.getObject().Desig;
+                        return {
+                            key: desig,
+                            text: desig
+                        }
+                    }
+
+
+                }));
+            }
 
             this.byId("oTabEmp").getBinding("items").filter(aFilters);
+
+            var sortField = this.byId("oCBSortField").getSelectedKey();
+            var sortOrder = this.byId("oRBGSortOrder").getSelectedIndex();
+
+            if (sortField !== "" && sortOrder !== -1) {
+                aSorters.push(new Sorter(sortField, (sortOrder === 0) ? false : true));
+            }
+
+            this.byId("oTabEmp").getBinding("items").sort(aSorters);
 
         },
         onPressReset() {

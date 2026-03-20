@@ -20,15 +20,16 @@
             <content>
                 <f:SimpleForm
                     layout="ResponsiveGridLayout"
-                    labelSpanL="3"
-                    labelSpanM="3"
+                    labelSpanL="4"
+                    labelSpanM="4"
                     emptySpanL="0"
                     emptySpanM="0"
                     editable="true"
                     columnsL="3"
                     columnsM="3"
+                    class="myCustomTable"
                 >
-                    <f:content>
+                    <f:content >
                         <core:Title text="Filters" />
                         <Label text="Employee Id" />
                         <Input
@@ -68,8 +69,8 @@
                         <ComboBox id="oCBGroupField">
                             <items>
                                 <core:Item
-                                    text="Skill"
-                                    key="Skill"
+                                    text="Status"
+                                    key="Status"
                                 />
                                 <core:Item
                                     text="Designation"
@@ -113,7 +114,7 @@
         <Table
             id="oTabEmp"
             items="{oModel>/EmployeeSet}"
-            class=".myCustomTable"
+            class="myCustomTable"
             backgroundDesign="Translucent"   
         >
             <columns>

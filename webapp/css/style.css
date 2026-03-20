@@ -5,20 +5,31 @@
 
 .myCustomTable {
     border : 1px solid #c72a2a;
-    border-radius: 4px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
+.myCustomClass {
+    border: 1px solid #c72a2a !important;
+    background-color: thistle;
+}
+
 .myCustomTable .sapMListTblCell {
-    border: 2px solid #1e1096 !important;
+    border: 1px solid #c72a2a !important;
+}
+
+.myCustomTable .sapMListTblCell:first-child {
+    border: 1px solid #c72a2a !important;
 }
 
 .myCustomTable .sapMListTblHeader {
-    border-bottom: 2px solid #c72a2a !important;
+    border-bottom: 1px solid #c72a2a !important;
+    border-left: 1px solid #c72a2a !important;
     /* Adjust color and thickness as needed */
 }
 
 .myCustomTable .sapMListTblHeaderCell {
-    border-right: 2px solid #c72a2a !important;
-    border-top: 2px solid #c72a2a !important;
+    border-right: 1px solid #c72a2a !important;
+    border-top: 1px solid #c72a2a !important;
+    background-color: aliceblue;
 }
