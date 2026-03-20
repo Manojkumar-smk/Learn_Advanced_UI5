@@ -37,14 +37,14 @@ server:
           - url: http://49.206.197.10:8034
             client: '100'
             destination: Training
-            path: /sap/opu/odata/sap/ZB78_EMP_SRV/
+            path: /sap/opu/odata/sap/ZMN_EMP_SRV/
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata/sap/ZB78_EMP_SRV
-            metadataPath: ./webapp/localService/ZB78_EMP_SRV/metadata.xml
-            mockdataPath: ./webapp/localService/ZB78_EMP_SRV/data
+          - urlPath: /sap/opu/odata/sap/ZMN_EMP_SRV
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
             generateMockData: true
         annotations: []

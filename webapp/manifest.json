@@ -16,12 +16,12 @@
       "toolsId": "0f2291d0-0a66-42de-a97d-f7321c9946c5"
     },
     "dataSources": {
-      "ZB78_EMP_SRV": {
-        "uri": "/sap/opu/odata/sap/ZB78_EMP_SRV/",
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZMN_EMP_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
-          "localUri": "localService/ZB78_EMP_SRV/metadata.xml",
+          "localUri": "localService/mainService/metadata.xml",
           "odataVersion": "2.0"
         }
       }
@@ -70,8 +70,8 @@
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/lookupvalues.json"
       },
-      "ZB78_EMP_SRV": {
-        "dataSource": "ZB78_EMP_SRV",
+      "": {
+        "dataSource": "mainService",
         "preload": true,
         "settings": {}
       }
