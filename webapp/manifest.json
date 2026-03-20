@@ -16,12 +16,12 @@
       "toolsId": "0f2291d0-0a66-42de-a97d-f7321c9946c5"
     },
     "dataSources": {
-      "mainService": {
-        "uri": "/sap/opu/odata/sap/ZMN_EMP_SRV/",
+      "ZB78_EMP_SRV": {
+        "uri": "/sap/opu/odata/sap/ZB78_EMP_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
-          "localUri": "localService/mainService/metadata.xml",
+          "localUri": "localService/ZB78_EMP_SRV/metadata.xml",
           "odataVersion": "2.0"
         }
       }
@@ -63,17 +63,17 @@
           "bundleName": "com.demo.learnui5.i18n.i18n"
         }
       },
-      "oModel": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {}
-      },
       "empModel": {
         "type": "sap.ui.model.json.JSONModel"
       },
       "lookUpModel": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/lookupvalues.json"
+      },
+      "ZB78_EMP_SRV": {
+        "dataSource": "ZB78_EMP_SRV",
+        "preload": true,
+        "settings": {}
       }
     },
     "resources": {
@@ -132,7 +132,7 @@
           ]
         },
         {
-          "name" : "RouteView6",
+          "name": "RouteView6",
           "pattern": "SixthView",
           "target": [
             "TargetView6"
@@ -161,8 +161,8 @@
           "name": "View5"
         },
         "TargetView6": {
-          "id" : "View6",
-          "name" : "View6"
+          "id": "View6",
+          "name": "View6"
         }
       }
     },
