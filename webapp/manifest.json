@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZMN_EMP_SRV/",
+        "uri": "/sap/opu/odata/sap/ZB78_EMP_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -70,7 +70,7 @@
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/lookupvalues.json"
       },
-      "": {
+      "oModel": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
