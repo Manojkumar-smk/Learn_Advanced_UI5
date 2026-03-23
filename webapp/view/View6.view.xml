@@ -29,7 +29,7 @@
                     columnsM="3"
                     class="myCustomTable"
                 >
-                    <f:content >
+                    <f:content>
                         <core:Title text="Filters" />
                         <Label text="Employee Id" />
                         <Input
@@ -115,8 +115,33 @@
             id="oTabEmp"
             items="{oModel>/EmployeeSet}"
             class="myCustomTable"
-            backgroundDesign="Translucent"   
+            backgroundDesign="Solid"
+            mode="SingleSelectLeft"
+            width="auto"
         >
+            <headerToolbar>
+                <Toolbar>
+                    <ToolbarSpacer />
+                    <Button
+                        text="Create Employee"
+                        icon="sap-icon://add"
+                        type="Accept"
+                        press="onCreateEmp"
+                    />
+                    <Button 
+                        text="Edit Employee"
+                        icon="sap-icon://edit"
+                        type="Emphasized"
+                        press="onEditEmp"
+                    ></Button>
+                    <Button 
+                        text="Delete Employee"
+                        icon="sap-icon://delete"
+                        type="Reject"
+                        press="onDeleteEmp"
+                    ></Button>
+                </Toolbar>
+            </headerToolbar>
             <columns>
                 <Column>
                     <Text text="Employee Id" />
@@ -154,5 +179,16 @@
                 </ColumnListItem>
             </items>
         </Table>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        text="Next Page"
+                        press="nextPage"
+                        type="Emphasized"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
     </Page>
 </mvc:View>

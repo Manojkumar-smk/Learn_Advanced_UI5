@@ -137,6 +137,27 @@
           "target": [
             "TargetView6"
           ]
+        },
+        {
+          "name": "RouteView7",
+          "pattern": "SeventhView/{key}",
+          "target": [
+            "TargetView7"
+          ]
+        },
+        {
+          "name": "RouteView8",
+          "pattern": "EigthView",
+          "target": [
+            "TargetView8"
+          ]
+        },
+        {
+          "name" : "RouteView9",
+          "pattern": "NinthView/{key}",
+          "target": [
+            "TargetView9"
+          ]
         }
       ],
       "targets": {
@@ -163,6 +184,18 @@
         "TargetView6": {
           "id": "View6",
           "name": "View6"
+        },
+        "TargetView7": {
+          "id": "View7",
+          "name": "View7"
+        },
+        "TargetView8": {
+          "id": "View8",
+          "name": "View8"
+        },
+        "TargetView9" : {
+          "id" : "View9",
+          "name": "View9"
         }
       }
     },

@@ -1,0 +1,61 @@
+<mvc:View
+    controllerName="com.demo.learnui5.controller.View8"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+>
+    <Page
+        title="i am View 8"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <Panel
+            headerText="Employee Create"
+            backgroundDesign="Solid"
+            expandable="true"
+            expand="true"
+            accessibleRole="Region"
+        >
+            <f:SimpleForm
+                id="oSFEmpCreate"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanL="2"
+                labelSpanM="2"
+                emptySpanL="8"
+                emptySpanM="8"
+            >
+                <f:content>
+                    <Label text="Employee Id" />
+                    <Input id="oIpEmpIdC" />
+                    <Label text="Name" />
+                    <Input id="oIpNameC" />
+                    <Label text="Deisgnation" />
+                    <Input id="oIpDesigC" />
+                    <Label text="Email" />
+                    <Input id="oIpEmailC" />
+                    <Label text="Status" />
+                    <Input id="oIpStatusC" />
+                    <Label text="Salary" />
+                    <Input id="oIpSalaryC" />
+                    <Label text="Rating" />
+                    <Input id="oIpRatingC" />
+                </f:content>
+            </f:SimpleForm>
+        </Panel>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        text="Save"
+                        icon="sap-icon://save"
+                        press="onPressSave"
+                        type="Emphasized"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

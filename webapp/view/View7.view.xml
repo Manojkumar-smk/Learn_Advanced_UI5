@@ -1,0 +1,41 @@
+<mvc:View
+    controllerName="com.demo.learnui5.controller.View7"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+>
+    <Page
+        title="i am View 7"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <Panel
+            headerText="Employee Details"
+            backgroundDesign="Solid"
+            expandable="true"
+            expand="true"
+        >
+            <f:SimpleForm
+                id="oSFEmpDetails"
+                editable="false"
+            >
+                <f:content>
+                     <Label text="Employee Id"></Label>
+                <Text text="{oModel>Empid}"></Text>
+                <Label text="Employee Name"></Label>
+                <Text text="{oModel>Name}"></Text>
+                <Label text="Designation"></Label>
+                <Text text="{oModel>Desig}"></Text>
+                <Label text="Salary"></Label>
+                <Text text="{oModel>Salary}"></Text>
+                <Label text="Status"></Label>
+                <Text text="{oModel>Status}"></Text>
+                <Label text="Rating"></Label>
+                <Text text="{oModel>Rating}"></Text>
+                </f:content>
+            </f:SimpleForm>
+        </Panel>
+    </Page>
+</mvc:View>
