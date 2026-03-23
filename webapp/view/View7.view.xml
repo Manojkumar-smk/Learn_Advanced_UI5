@@ -11,31 +11,79 @@
         showNavButton="true"
         navButtonPress="onNavBack"
     >
-        <Panel
-            headerText="Employee Details"
-            backgroundDesign="Solid"
-            expandable="true"
-            expand="true"
-        >
-            <f:SimpleForm
-                id="oSFEmpDetails"
-                editable="false"
+        <content>
+            <ObjectHeader
+                title="{oModel>Name}"
+                number="{oModel>Salary}"
+                numberUnit="INR"
             >
-                <f:content>
-                     <Label text="Employee Id"></Label>
-                <Text text="{oModel>Empid}"></Text>
-                <Label text="Employee Name"></Label>
-                <Text text="{oModel>Name}"></Text>
-                <Label text="Designation"></Label>
-                <Text text="{oModel>Desig}"></Text>
-                <Label text="Salary"></Label>
-                <Text text="{oModel>Salary}"></Text>
-                <Label text="Status"></Label>
-                <Text text="{oModel>Status}"></Text>
-                <Label text="Rating"></Label>
-                <Text text="{oModel>Rating}"></Text>
-                </f:content>
-            </f:SimpleForm>
-        </Panel>
+                <attributes>
+                    <ObjectAttribute
+                        title="Employee Id"
+                        text="{oModel>Empid}"
+                    />
+                    <ObjectAttribute
+                        title="Designation"
+                        text="{oModel>Desig}"
+                    />
+                </attributes>
+                <statuses>
+                    <ObjectStatus text="{oModel>Status}" />
+                </statuses>
+            </ObjectHeader>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter icon="sap-icon://information">
+                        <f:SimpleForm
+                            id="oSFEmpDetails"
+                            editable="false"
+                        >
+                            <f:content>
+                                <Label text="Employee Id" />
+                                <Text text="{oModel>Empid}" />
+                                <Label text="Employee Name" />
+                                <Text text="{oModel>Name}" />
+                                <Label text="Designation" />
+                                <Text text="{oModel>Desig}" />
+                                <Label text="Salary" />
+                                <Text text="{oModel>Salary}" />
+                                <Label text="Status" />
+                                <Text text="{oModel>Status}" />
+                                <Label text="Rating" />
+                                <Text text="{oModel>Rating}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://accounting-document-verification"
+                    >
+                        <Table items="{oModel>toCertifications}">
+                            <columns>
+                                <Column>
+                                    <Text text="Employee Id" />
+                                </Column>
+                                <Column>
+                                    <Text text="Certification Code" />
+                                </Column>
+                                <Column>
+                                    <Text text="Skill" />
+                                </Column>
+                                <Column>
+                                    <Text text="Description" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <Text text="{oModel>Empid}" />
+                                    <Text text="{oModel>Certcode}" />
+                                    <Text text="{oModel>Skill}" />
+                                    <Text text="{oModel>Certname}" />
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
     </Page>
 </mvc:View>

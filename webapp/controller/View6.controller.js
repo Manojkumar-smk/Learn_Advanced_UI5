@@ -82,7 +82,12 @@ sap.ui.define([
         onPressReset() {
             this.byId("oIpEmp").setValue("");
             this.byId("oIpNameFilter").setValue("");
+            this.byId("oCBGroupField").setValue("");
+            this.byId("oCBSortField").setValue("");
+            this.byId("oRBGGroupOrder").setSelectedIndex(-1);
+            this.byId("oRBGSortOrder").setSelectedIndex(-1);
             this.byId("oTabEmp").getBinding("items").filter([]);
+            this.byId("oTabEmp").getBinding("items").sort([]);
         },
         nextPage() {
             var empid = "E00005"

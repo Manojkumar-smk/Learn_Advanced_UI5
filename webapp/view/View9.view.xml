@@ -11,34 +11,94 @@
         showNavButton="true"
         navButtonPress="onNavBack"
     >
-        <Panel
-            headerText="Employee Edit"
-            backgroundDesign="Solid"
-            expandable="true"
-            expand="true"
+        <f:SimpleForm
+            id="oSFEmpEdit"
+            editable="false"
+            title="Employee Details"
         >
-                <f:SimpleForm
-                id="oSFEmpEdit"
-                editable="false"
-            >
-                <f:content>
-                <Label text="Employee Id"></Label>
-          <Input id="oIpEmpIdE" value="{oModel>Empid}" enabled="false"></Input>
-          <Label text="Name"></Label>
-          <Input id="oIpNameE" value="{oModel>Name}"></Input>
-          <Label text="Deisgnation"></Label>
-          <Input id="oIpDesigE" value="{oModel>Desig}"></Input>
-          <Label text="Email"></Label>
-          <Input id="oIpEmailE" value="{oModel>Email}"></Input>
-          <Label text="Status"></Label>
-          <Input id="oIpStatusE" value="{oModel>Status}"></Input>
-          <Label text="Salary"></Label>
-          <Input id="oIpSalaryE" value="{oModel>Salary}"></Input>
-          <Label text="Rating"></Label>
-          <Input id="oIpRatingE" value="{oModel>Rating}"></Input>
-                </f:content>
-            </f:SimpleForm>
-        </Panel>
+            <f:content>
+                <Label text="Employee Id" />
+                <Input
+                    id="oIpEmpIdE"
+                    value="{oModel>Empid}"
+                    enabled="false"
+                />
+                <Label text="Name" />
+                <Input
+                    id="oIpNameE"
+                    value="{oModel>Name}"
+                />
+                <Label text="Deisgnation" />
+                <Input
+                    id="oIpDesigE"
+                    value="{oModel>Desig}"
+                />
+                <Label text="Email" />
+                <Input
+                    id="oIpEmailE"
+                    value="{oModel>Email}"
+                />
+                <Label text="Status" />
+                <Input
+                    id="oIpStatusE"
+                    value="{oModel>Status}"
+                />
+                <Label text="Salary" />
+                <Input
+                    id="oIpSalaryE"
+                    value="{oModel>Salary}"
+                />
+                <Label text="Rating" />
+                <Input
+                    id="oIpRatingE"
+                    value="{oModel>Rating}"
+                />
+            </f:content>
+        </f:SimpleForm>
+        <Table items="{certUpdateModel>/results}">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="Add/Edit Certification Details" />
+                    <ToolbarSpacer />
+                    <Button
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press="onPressAdd"
+                    />
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="Employee Id" />
+                </Column>
+                <Column>
+                    <Text text="Certification Code" />
+                </Column>
+                <Column>
+                    <Text text="Skill" />
+                </Column>
+                <Column>
+                    <Text text="Description" />
+                </Column>
+                <Column>
+                    <Text text="Delete" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <Input value="{certUpdateModel>Empid}" />
+                    <Input value="{certUpdateModel>Certcode}" />
+                    <Input value="{certUpdateModel>Skill}" />
+                    <Input value="{certUpdateModel>Certname}" />
+                    <Button
+                        icon="sap-icon://delete"
+                        type="Reject"
+                        press="onDeleteRow"
+                    />
+                </ColumnListItem>
+            </items>
+        </Table>
+
         <footer>
             <Bar>
                 <contentRight>

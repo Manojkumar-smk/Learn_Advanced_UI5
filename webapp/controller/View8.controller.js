@@ -5,9 +5,31 @@ sap.ui.define([
     "use strict";
     return Controller.extend("com.demo.learnui5.controller.View8", {
         onInit() {
+            this.certModel = this.getOwnerComponent().getModel("certModel");
+            this.certModel.setData({
+                aCertifications : [
+
+                ]
+            });
         },
         onNavBack() {
             this.getOwnerComponent().getRouter().navTo("RouteView6");
+        },
+        onAddRow() {
+            this.certModel.getData().aCertifications.push(
+                {
+                    Empid: this.byId("oIpEmpIdC").getValue(),
+                    Certcode: "",
+                    Skill: "",
+                    Certname: ""
+                }
+            );
+            this.certModel.refresh();
+        },
+        onDeleteRow(oEvent) {
+            var index = oEvent.getSource().getParent().getBindingContextPath().split("/")[2];
+            this.certModel.getData().aCertifications.splice(index, 1);
+            this.certModel.refresh();
         },
         onPressSave() {
             var empid = this.byId("oIpEmpIdC").getValue();
@@ -25,7 +47,8 @@ sap.ui.define([
                 Email: email,
                 Status: status,
                 Salary: salary,
-                Rating: parseInt(rating)
+                Rating: parseInt(rating),
+                toCertifications : this.certModel.getData().aCertifications
             }
 
             var oModel = this.getOwnerComponent().getModel("oModel");

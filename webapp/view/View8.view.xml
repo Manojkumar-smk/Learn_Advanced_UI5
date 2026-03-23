@@ -14,8 +14,6 @@
         <Panel
             headerText="Employee Create"
             backgroundDesign="Solid"
-            expandable="true"
-            expand="true"
             accessibleRole="Region"
         >
             <f:SimpleForm
@@ -45,6 +43,54 @@
                 </f:content>
             </f:SimpleForm>
         </Panel>
+        <Table
+                id="oTabCert"
+                items="{certModel>/aCertifications}"
+                class="sapUiSmallMargin"
+                width="auto"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <ToolbarSpacer />
+                        <Button
+                            press="onAddRow"
+                            type="Emphasized"
+                            icon="sap-icon://add"
+                            text="Add Row"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Employee Id" />
+                    </Column>
+                    <Column>
+                        <Text text="Certificate Code" />
+                    </Column>
+                    <Column>
+                        <Text text="Skill" />
+                    </Column>
+                    <Column>
+                        <Text text="Certificate Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Delete" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <Input value="{certModel>Empid}" enabled="false" />
+                        <Input value="{CertModel>Certcode}" />
+                        <Input value="{CertModel>Skill}" />
+                        <Input value="{CertModel>Certname}" />
+                        <Button
+                            icon="sap-icon://delete"
+                            type="Reject"
+                            press="onDeleteRow"
+                        />
+                    </ColumnListItem>
+                </items>
+            </Table>
         <footer>
             <Bar>
                 <contentRight>
