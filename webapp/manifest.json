@@ -1,5 +1,5 @@
 {
-  "_version": "1.82.0",
+  "_version": "1.7.0",
   "sap.app": {
     "id": "com.demo.learnui5",
     "type": "application",
