@@ -87,6 +87,17 @@
         {
           "uri": "css/style.css"
         }
+      ],
+       "js": [
+        {
+          "uri": "libs/filesaver.js"
+        },
+        {
+          "uri": "libs/jszip.js"
+        },
+        {
+          "uri": "libs/xlsx.js"
+        }
       ]
     },
     "routing": {
@@ -164,6 +175,13 @@
           "target": [
             "TargetView9"
           ]
+        },
+        {
+          "name" : "RouteView10",
+          "pattern": "TenthView",
+          "target" : [
+            "TargetView10"
+          ]
         }
       ],
       "targets": {
@@ -202,6 +220,10 @@
         "TargetView9" : {
           "id" : "View9",
           "name": "View9"
+        },
+        "TargetView10" : {
+          "id" : "View10",
+          "name" : "View10"
         }
       }
     },

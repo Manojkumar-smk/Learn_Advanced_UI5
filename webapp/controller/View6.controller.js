@@ -3,8 +3,9 @@ sap.ui.define([
     "sap/m/MessageBox",
     "com/demo/learnui5/model/formatter",
     "sap/ui/model/Filter",
-    "sap/ui/model/Sorter"
-], (Controller, MessageBox, formatter, Filter, Sorter) => {
+    "sap/ui/model/Sorter",
+    "sap/ui/export/Spreadsheet"
+], (Controller, MessageBox, formatter, Filter, Sorter, Spreadsheet) => {
     "use strict";
     return Controller.extend("com.demo.learnui5.controller.View6", {
         f: formatter,
@@ -127,6 +128,47 @@ sap.ui.define([
                     MessageBox.error(JSON.parse(oError.responseText).error.message.value);
                 }
             });
+        },
+        onExportToExcel : function () {
+            var aCols, oRowBinding, oSettings, oSheet;
+            oRowBinding = this.getView().byId('oTabEmp').getBinding('items');
+
+               aCols = [{
+                label: 'Employee ID',
+                property: 'Empid'
+            }, {
+                label: 'Name',
+                property: 'Name'
+            }, {
+                label: 'Designation',
+                property: 'Desig'
+            }, {
+                label: 'Email',
+                property: 'Email'
+            },{
+                label: 'Salary',
+                property: 'Salary',
+                type: 'Number',
+                delimiter: true,
+                scale: 2
+            }];
+            
+             oSettings = {
+                workbook: {
+                    columns: aCols
+                },
+                dataSource: oRowBinding,
+                fileName: 'Employees.xlsx',
+                worker: true
+            };
+
+            oSheet = new Spreadsheet(oSettings);
+            oSheet.build().finally(function () {
+                oSheet.destroy();
+            });
+        },
+        onCreateBulkEmp : function () {
+            this.getOwnerComponent().getRouter().navTo("RouteView10");
         }
     })
 })

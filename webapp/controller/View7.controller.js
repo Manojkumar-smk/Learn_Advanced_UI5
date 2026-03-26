@@ -14,6 +14,18 @@ sap.ui.define([
         },
         onNavBack() {
             this.getOwnerComponent().getRouter().navTo("RouteView6");
+        },
+         onPressPhoto:function(){
+            var url = "/sap/opu/odata/sap/ZB78_EMP_SRV/PhotoSet('"+this.empId+"')/$value";
+            sap.m.URLHelper.redirect(url,false);
+        },
+        onDownloadFile : function (oEvent) {
+            var empid = oEvent.getSource().getParent().getBindingContext("oModel").getObject().Empid;
+            var filename = oEvent.getSource().getParent().getBindingContext("oModel").getObject().Filename;
+
+            var url = "/sap/opu/odata/sap/ZB78_EMP_SRV/DocSet(Empid='"+empid+"',Filename='"+filename+"')/$value";
+
+            sap.m.URLHelper.redirect(url, false);
         }
     })
 })

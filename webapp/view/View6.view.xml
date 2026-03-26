@@ -128,18 +128,30 @@
                         type="Accept"
                         press="onCreateEmp"
                     />
-                    <Button 
+                    <Button
                         text="Edit Employee"
                         icon="sap-icon://edit"
                         type="Emphasized"
                         press="onEditEmp"
-                    ></Button>
-                    <Button 
+                    />
+                    <Button
                         text="Delete Employee"
                         icon="sap-icon://delete"
                         type="Reject"
                         press="onDeleteEmp"
+                    />
+                    <Button 
+                        icon="sap-icon://add"
+                        type="Accept"
+                        text="Create Bulk Employees"
+                        press="onCreateBulkEmp"
                     ></Button>
+                    <Button
+                        icon="sap-icon://excel-attachment"
+                        type="Reject"
+                        text="Export"
+                        press="onExportToExcel"
+                    />
                 </Toolbar>
             </headerToolbar>
             <columns>

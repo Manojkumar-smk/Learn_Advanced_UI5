@@ -1,0 +1,78 @@
+<mvc:View
+    controllerName="com.demo.learnui5.controller.View10"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+>
+    <Page
+        title="i am View 10"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <content>
+            <f:SimpleForm
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanL="4"
+                labelSpanM="4"
+                emptySpanL="4"
+                emptySpanM="4"
+            >
+                <Label text="Upload an Excel File" />
+                <u:FileUploader
+                    id="oFileUploaderXL"
+                    uploadOnChange="true"
+                    icon="sap-icon://upload"
+                    change="onSelectFile"
+                    buttonText="Browse"
+                />
+            </f:SimpleForm>
+            <Table items="{bulkEmpModel>aEmployees}">
+                <columns>
+                    <Column>
+                        <Text text="Employee Id" />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Designation" />
+                    </Column>
+                    <Column>
+                        <Text text="Email" />
+                    </Column>
+                    <Column>
+                        <Text text="Salary" />
+                    </Column>
+                    <Column>
+                        <Text text="Status" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <Input value="{bulkEmpModel>Empid}" />
+                        <Input value="{bulkEmpModel>Name}" />
+                        <Input value="{bulkEmpModel>Desig}" />
+                        <Input value="{bulkEmpModel>Email}" />
+                        <Input value="{bulkEmpModel>Salary}" />
+                        <Input value="{bulkEmpModel>Status}" />
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        text="Submit All"
+                        type="Emphasized"
+                        press="onSubmit"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

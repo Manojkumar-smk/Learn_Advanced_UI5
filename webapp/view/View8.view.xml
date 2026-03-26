@@ -5,6 +5,8 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
     xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+    xmlns:up="sap.m.upload"
 >
     <Page
         title="i am View 8"
@@ -40,12 +42,21 @@
                     <Input id="oIpSalaryC" />
                     <Label text="Rating" />
                     <Input id="oIpRatingC" />
+                    <Label text="Upload your Photo"></Label>
+                    <u:FileUploader 
+                    id="oFileUploaderPhoto"
+                    uploadUrl="/sap/opu/odata/sap/ZB78_EMP_SRV/PhotoSet"
+                    sendXHR="true"
+                    useMultipart="false"
+                    change="onSelFile"
+                    uploadComplete="onUploadComplete"
+                    ></u:FileUploader>
                 </f:content>
             </f:SimpleForm>
         </Panel>
         <Table
                 id="oTabCert"
-                items="{certModel>/aCertifications}"
+                items="{certModel>aCertifications}"
                 class="sapUiSmallMargin"
                 width="auto"
             >
@@ -91,6 +102,12 @@
                     </ColumnListItem>
                 </items>
             </Table>
+        <Panel headerText="Upload Document">
+         <up:UploadSet id="oUploadSet" instantUpload="false" multiple="true" uploadUrl="/sap/opu/odata/sap/ZB78_EMP_SRV/DocSet"
+         uploadCompleted="onDocUploadCompleted">
+
+        </up:UploadSet>
+        </Panel>
         <footer>
             <Bar>
                 <contentRight>

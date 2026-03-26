@@ -16,6 +16,10 @@
                 title="{oModel>Name}"
                 number="{oModel>Salary}"
                 numberUnit="INR"
+                icon="/sap/opu/odata/sap/ZB78_EMP_SRV/PhotoSet('{oModel>Empid}')/$value"
+                imageShape="Circle"
+                iconPress="onPressPhoto"
+                iconActive="true"
             >
                 <attributes>
                     <ObjectAttribute
@@ -78,6 +82,28 @@
                                     <Text text="{oModel>Certcode}" />
                                     <Text text="{oModel>Skill}" />
                                     <Text text="{oModel>Certname}" />
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://attachment">
+                        <Table items="{oModel>toDocs}">
+                            <columns>
+                                <Column>
+                                    <Text text="File Name" />
+                                </Column>
+                                <Column>
+                                    <Text text="Download" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <Text text="{oModel>Filename}" />
+                                    <Button
+                                        icon="sap-icon://download"
+                                        type="Reject"
+                                        press="onDownloadFile"
+                                    />
                                 </ColumnListItem>
                             </items>
                         </Table>
